@@ -1,99 +1,81 @@
-Microsoft Fabric Data Engineering Project – Coffee Shop Analytics
-🔍 Project Overview
 
-This project demonstrates an end-to-end data engineering pipeline built using Microsoft Fabric following the Medallion Architecture (Landing → Bronze → Silver → Gold) to support business decision-making through Power BI analytics.
 
-The solution processes raw coffee shop transaction data and delivers clean, analytics-ready fact and dimension tables optimized for reporting.
+# ☕ Microsoft Fabric Data Engineering Project – Coffee Shop Analytics
 
-🧱 Architecture
+## 🔍 Project Overview
 
-Landing → Bronze → Silver → Gold
+This project demonstrates an **end-to-end data engineering pipeline** built using **Microsoft Fabric**, following the **Medallion Architecture (Landing → Bronze → Silver → Gold)** to support **business decision-making** through **Power BI analytics**.
 
-Landing: Raw CSV ingestion (audit-safe, no transformations)
+The solution processes raw coffee shop transaction data and delivers **clean, analytics-ready fact and dimension tables** optimized for reporting and insights.
 
-Bronze: Delta ingestion with schema enforcement & month-based partitioning
+---
 
-Silver: Data quality checks, cleaning, standardization & business transformations
+## 🧱 Architecture
 
-Gold: Star schema (fact & dimension tables) optimized for Power BI
+**Landing → Bronze → Silver → Gold**
 
-🛠️ Tech Stack
+* **Landing**: Raw CSV ingestion (audit-safe, no transformations)
+* **Bronze**: Delta ingestion with schema enforcement and month-based partitioning
+* **Silver**: Data quality checks, cleaning, standardization, and business transformations
+* **Gold**: Star schema (fact and dimension tables) optimized for Power BI
 
-Microsoft Fabric
+---
 
-OneLake (Lakehouse)
+## 🛠️ Tech Stack
 
-PySpark
+* Microsoft Fabric
+* OneLake (Lakehouse)
+* PySpark
+* Delta Lake
+* Power BI
+* Medallion Architecture
 
-Delta Lake
+---
 
-Power BI
+## 📊 Business Objectives Solved
 
-Medallion Architecture
+* Sales performance by store location
+* Top-selling products and categories
+* Peak transaction hours and staffing optimization
+* Average Transaction Value (ATV) analysis
+* Weekday vs weekend sales trends
+* Underperforming product detection
+* Pricing consistency checks across stores
+* Payment method usage analysis
 
-📊 Business Objectives Solved
+---
 
-Sales performance by store location
+## 🧪 Data Quality & Engineering Highlights
 
-Top-selling products & categories
+* ✔ Month-based incremental processing
+* ✔ Rerun-safe pipelines using `replaceWhere`
+* ✔ Composite-key duplicate handling
+* ✔ Strong data lineage (`file_name`, `date_processed`)
+* ✔ Spark capacity throttling handled using **Wait Activities**
+* ✔ Power BI Direct Lake issues diagnosed and resolved
 
-Peak transaction hours & staffing optimization
+---
 
-Average transaction value (ATV)
+## 🗂️ Gold Layer – Star Schema
 
-Weekday vs weekend trends
+### Fact Table
 
-Underperforming product detection
+* `fact_sales`
 
-Pricing consistency checks
+### Dimension Tables
 
-Payment method analysis
+* `dim_store`
+* `dim_product`
+* `dim_date`
+* `dim_time`
+* `dim_payment_method`
 
-🧪 Data Quality & Engineering Highlights
+---
 
-✔ Month-based incremental processing
-✔ Rerun-safe pipelines using replaceWhere
-✔ Composite-key duplicate handling
-✔ Strong data lineage (file_name, date_processed)
-✔ Spark capacity throttling handled with Wait Activities
-✔ Direct Lake Power BI issue diagnosed & resolved
+## 📈 Power BI Insights
 
-🗂️ Gold Layer – Star Schema
-
-Fact Table
-
-fact_sales
-
-Dimensions
-
-dim_store
-
-dim_product
-
-dim_date
-
-dim_time
-
-dim_payment_method
-
-📈 Power BI Insights
-
-Astoria & Hell’s Kitchen outperform other locations
-
-Beverages drive the highest revenue
-
-Morning & afternoon are peak hours
-
-Several products consistently underperform
-
-Upselling opportunities identified via ATV analysis
-
-📄 Full Technical Documentation
-
-📘 Detailed implementation (code, screenshots, pipeline design):
-➡️ docs/Project_08_Fabric_Data_Engineering.pdf
-
-👩‍💻 Author
-
-Deepika Mandapalli
-Azure Data Engineer | Microsoft Fabric | Delta Lake | Power BI
+* Astoria and Hell’s Kitchen outperform other locations
+* Beverages generate the highest revenue
+* Morning and afternoon are peak transaction periods
+* Several products consistently underperform
+* Upselling opportunities identified through ATV analysis
