@@ -7,6 +7,7 @@
 This project demonstrates an **end-to-end data engineering pipeline** built using **Microsoft Fabric**, following the **Medallion Architecture (Landing → Bronze → Silver → Gold)** to support **business decision-making** through **Power BI analytics**.
 
 The solution processes raw coffee shop transaction data and delivers **clean, analytics-ready fact and dimension tables** optimized for reporting and insights.
+<img width="1470" height="798" alt="Screenshot 2026-01-11 at 10 57 27 PM" src="https://github.com/user-attachments/assets/3a30105e-1909-4ad4-ad4e-aabe37fcaaf6" />
 
 ---
 
